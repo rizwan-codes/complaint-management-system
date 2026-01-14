@@ -111,6 +111,13 @@ Authorization: Bearer <token>
 
 ## Testing with Postman
 
+**Option 1: Import Collection (Recommended)**
+1. Open Postman
+2. Click "Import"
+3. Select `Complaint Managment System.postman_collection.json` from the repository
+4. All API requests are pre-configured and ready to use
+
+**Option 2: Manual Testing**
 1. Login to get JWT token
 2. Copy the token
 3. Add header to protected endpoints:
