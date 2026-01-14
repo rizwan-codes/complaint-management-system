@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "724eac88-643d-4365-865a-628cbf671738",
+		"name": "Complaint Managment System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44815062",
+		"_collection_link": "https://rizwanyaqoob-204146.postman.co/workspace/Rizwan-Yaqoob-'s-Workspace~faa87e97-328e-4dde-8886-ef86ac3e4bba/collection/44815062-724eac88-643d-4365-865a-628cbf671738?action=share&source=collection_link&creator=44815062"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Rizwan_test\",\r\n    \"email\": \"rizwan@example.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"USER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Login admin (Jwt token0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"yaqoob\",\r\n  \"password\": \"yaqoob123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile accessed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzNzMzODUsImV4cCI6MTc2ODQ1OTc4NX0.ij3A74qFzu_gGmgnOMZbwx_1-4-U_q_4yvpKQKS3Q_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"rizwan\",\r\n  \"password\": \"rizwan123\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin access",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzNzMzODUsImV4cCI6MTc2ODQ1OTc4NX0.ij3A74qFzu_gGmgnOMZbwx_1-4-U_q_4yvpKQKS3Q_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"rizwan\",\r\n  \"password\": \"rizwan123\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/admin/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"admin",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Category Complaint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXFvb2IiLCJpYXQiOjE3NjgzNzY5NjUsImV4cCI6MTc2ODQ2MzM2NH0.JJqB26Fn9fEYtC1VC6FChF8NjIaA2HR5BhhW9VL9mkw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Testttt issue Hellwww\",\r\n    \"description\": \"There issssssaaaaaaaaas a Regarding the land. Need urgent resolution.\",\r\n    \"category\": \"SERVICE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/complaints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Complaints",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXFvb2IiLCJpYXQiOjE3NjgzNzgwMDQsImV4cCI6MTc2ODQ2NDQwNH0.U2gQk8GXSm3V2D2FUNKW1QlaqVjSbR61BRhgmAmbzE4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/complaints/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Complaints (Only ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzNzgxMTksImV4cCI6MTc2ODQ2NDUxOX0.sg4F1mBa_-je8oABHhoLvlE5h9rvsrRR7LzXH-PpRUo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/complaints/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status (ADMIN only)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzNzgxMTksImV4cCI6MTc2ODQ2NDUxOX0.sg4F1mBa_-je8oABHhoLvlE5h9rvsrRR7LzXH-PpRUo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"RESOLVED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/complaints/1/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notifications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXFvb2IiLCJpYXQiOjE3NjgzNzk4NTAsImV4cCI6MTc2ODQ2NjI1MH0.UFjZFYH0QdxIfBp9fGz-TvrTdl1iXSPykBCok5iF-50",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/notifications/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"notifications",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "By status complaints",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzODE4MDMsImV4cCI6MTc2ODQ2ODIwM30.5UBcqYz3gwhK1sahajSCE0D1zVSZqcc8rXfb3zkNzBU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/complaints/search?status=NEW",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints",
+						"search"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "NEW"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complaints By category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaXp3YW4iLCJpYXQiOjE3NjgzODE4MDMsImV4cCI6MTc2ODQ2ODIwM30.5UBcqYz3gwhK1sahajSCE0D1zVSZqcc8rXfb3zkNzBU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/complaints/search?category=SERVICE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"complaints",
+						"search"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "SERVICE"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
